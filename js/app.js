@@ -110,7 +110,7 @@ const showDetails = details => {
   <img src="${details.image}" class="card-img-top mx-auto mt-2" alt="..." style="width:210px; height:250px;">
     <div class="card-body pt-2">
       <h5 class="card-title text-success">${details.title}</h5>
-      <p class="card-text">${details.description.slice(0, 150)}</p>
+      <p class="card-text">${details.description.slice(0, 160)}</p>
     </div>
   `;
   detailsDiv.appendChild(div);
