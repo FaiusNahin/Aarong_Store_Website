@@ -22,13 +22,13 @@
 
 <body>
   <header>
-    <h1 class="text-center mt-4 text-muted">Aarong Store</h1>
+    <h1 class="text-center mt-2 text-muted">Aarong Store</h1>
   </header>
   <main class="main">
     <!-- Search Field-->
-    <div class="search-field my-4">
-      <div class="search-box w-25 d-flex justify-content-between">
-        <input id="input-field" class="search-field fs-5 px-3" type="text" placeholder="search items" />
+    <div class="search-field my-2">
+      <div class="search-box input-group w-25 mx-auto">
+        <input id="input-field" class="form-control fs-5 px-3 search-field" type="text" placeholder="search items" />
         <button type="button" class="btn btn-primary search-button fs-5" data-toggle="button" aria-pressed="false"
           autocomplete="off" id="search-btn" onclick="loadProducts()">
           Search
@@ -37,9 +37,13 @@
     </div>
 
     <!-- Product Details -->
-    <div id="product-details">
+    <section>
+      <div id="product-details">
 
-    </div>
+      </div>
+    </section>
+    <!-- hr -->
+    <hr class="m-0 mt-3 mb-2 w-50 mx-auto">
 
     <div class="row">
       <!-- Show All product -->
@@ -50,10 +54,10 @@
       </div>
       <!-- cart amount details -->
       <div class="col-md-3 col-lg-3 col-sm-5 cart-main">
-        <div class="cart ms-4" id="my-cart">
+        <div class="cart ms-4 mt-0" id="my-cart">
           <table class="table">
             <thead>
-              <h1>My-Cart</h1>
+              <h1 class="fs-2 m-0">My-Cart</h1>
               <tr>
                 <th scope="col"></th>
                 <th scope="col"></th>

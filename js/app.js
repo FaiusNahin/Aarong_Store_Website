@@ -5,6 +5,7 @@ const loadProducts = () => {
     .then((response) => response.json())
     .then((data) => showProducts(data));
 };
+loadProducts();
 
 // show all product in UI 
 const showProducts = (products) => {
@@ -29,7 +30,7 @@ const showProducts = (products) => {
         </div>
       <p class="fs-5 mb-3"><span class="text-success">${product.rating.count}</span> people gives rating</p>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button id="details-btn" class="btn btn-danger">Details</button></div>
+      <button onclick="loadDetails(${product.id})" id="details-btn" class="btn btn-danger">Details</button></div>
       `;
     document.getElementById("all-products").appendChild(div);
   }
@@ -90,4 +91,27 @@ const updateTotal = () => {
     getInputValue("total-tax");
   document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
-loadProducts();
+
+// Product details Api
+const loadDetails = detailsId => {
+  const url = `https://fakestoreapi.com/products/${detailsId}`;
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => showDetails(data));
+}
+// product Details
+const showDetails = details => {
+  const detailsDiv = document.getElementById('product-details');
+  detailsDiv.textContent = '';
+
+  const div = document.createElement('div');
+  div.classList.add('card', 'w-25', 'mx-auto');
+  div.innerHTML = `
+  <img src="${details.image}" class="card-img-top mx-auto mt-2" alt="..." style="width:210px; height:250px;">
+    <div class="card-body pt-2">
+      <h5 class="card-title text-success">${details.title}</h5>
+      <p class="card-text">${details.description.slice(0, 150)}</p>
+    </div>
+  `;
+  detailsDiv.appendChild(div);
+}
