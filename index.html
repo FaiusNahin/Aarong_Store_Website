@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aarong Store</title>
   <link rel="stylesheet" href="./css/style.css" />
-  <!-- Latest compiled and minified CSS -->
+  <!-- Bootstrap-5 link -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -15,6 +15,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome link -->
+  <script src="https://kit.fontawesome.com/ca40b1d4c1.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -22,6 +25,7 @@
     <h1 class="text-center mt-4 text-muted">Aarong Store</h1>
   </header>
   <main class="main">
+    <!-- Search Field-->
     <div class="search-field my-4">
       <div class="search-box w-25 d-flex justify-content-between">
         <input id="input-field" class="search-field fs-5 px-3" type="text" placeholder="search items" />
@@ -31,14 +35,22 @@
         </button>
       </div>
     </div>
+
+    <!-- Product Details -->
+    <div id="product-details">
+
+    </div>
+
     <div class="row">
+      <!-- Show All product -->
       <div class="col-md-9 col-lg-9 col-sm-7">
         <div id="all-products" class="px-2">
 
         </div>
       </div>
+      <!-- cart amount details -->
       <div class="col-md-3 col-lg-3 col-sm-5 cart-main">
-        <div class="cart" id="my-cart">
+        <div class="cart ms-4" id="my-cart">
           <table class="table">
             <thead>
               <h1>My-Cart</h1>
@@ -52,31 +64,31 @@
             <tbody>
               <tr>
                 <th>Total Added-Products:</th>
-                <td><span id="total-Products">0</span></td>
+                <td class="ps-xxl-4"><span id="total-Products">0</span></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
                 <th>Price:</th>
-                <td>$ <span id="price">0</span></td>
+                <td class="ps-4">$ <span id="price">0</span></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
                 <th>Delivery-Charge:</th>
-                <td>$ <span id="delivery-charge">20</span></td>
+                <td class="ps-4">$ <span id="delivery-charge">20</span></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
                 <th>Total-Tax:</th>
-                <td>$ <span id="total-tax">0</span></td>
+                <td class="ps-4">$ <span id="total-tax">0</span></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
                 <th scope="row">Total</th>
-                <td colspan="2">$ <span id="total">0</span></td>
+                <td colspan="2" class="ps-4">$ <span id="total">0</span></td>
                 <td></td>
               </tr>
             </tbody>

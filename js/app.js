@@ -1,3 +1,4 @@
+// Api Link 
 const loadProducts = () => {
   const url = 'https://fakestoreapi.com/products';
   fetch(url)
@@ -7,26 +8,34 @@ const loadProducts = () => {
 
 // show all product in UI 
 const showProducts = (products) => {
-  const allProducts = products.map(pd => pd);
+  const allProducts = products.map(product => product);
   for (const product of allProducts) {
-    const image = product.images;
     const div = document.createElement("div");
-    div.classList.add("product", "h-100", "mx-2", "py-3", "mt-5");
+    div.classList.add("product", "h-100", "mx-2", "py-3", "mt-2");
     div.innerHTML = `<div class="single-product py-3">
       <div>
       <img class="product-image" src=${product.image}></img>
       </div>
       <h3>${product.title}</h3>
-      <p>Category: ${product.category}</p>
+      <p class="mb-2">Category: ${product.category}</p>
       <h2>Price: $ ${product.price}</h2>
-      <p class=" fs-4">Rating: <span class="text-primary">${product.rating.rate}</span></p>
-      <p class="fs-5"><span class="text-success">${product.rating.count}</span> people gives rating</p>
+      <p class=" fs-4 mt-3 mb-0">Rating: <span class="text-primary">${product.rating.rate}</span></p>
+      <div class="">
+        <i class="fas fa-star filled"></i>
+        <i class="fas fa-star filled"></i>
+        <i class="fas fa-star filled"></i>
+        <i class="fas fa-star filled"></i>
+        <i class="fas fa-star empty"></i>
+        </div>
+      <p class="fs-5 mb-3"><span class="text-success">${product.rating.count}</span> people gives rating</p>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
       <button id="details-btn" class="btn btn-danger">Details</button></div>
       `;
     document.getElementById("all-products").appendChild(div);
   }
 };
+
+// Cart Total 
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
@@ -37,6 +46,7 @@ const addToCart = (id, price) => {
   document.getElementById("total-Products").innerText = count;
 };
 
+// get input Value function
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
   const converted = parseFloat(element);
